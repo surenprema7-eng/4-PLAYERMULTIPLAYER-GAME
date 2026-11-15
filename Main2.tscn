@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://2bmo5qs6nwyw"]
+
+[ext_resource type="Texture2D" uid="uid://bj0u7k8lxyqtt" path="res://stickman all part runnning.png" id="1_00mg6"]
+[ext_resource type="Texture2D" uid="uid://bwgvouj2hlulk" path="res://stickman run part 3.png" id="2_bu7lx"]
+[ext_resource type="Script" uid="uid://b3hl0d5i1jokw" path="res://animated_sprite_2d.gd" id="2_wruwk"]
+[ext_resource type="Texture2D" uid="uid://dirgoxhbcoolj" path="res://stickman faster walk part 2.png" id="4_wruwk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wruwk"]
+atlas = ExtResource("1_00mg6")
+region = Rect2(278, 0, 139, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8xwg"]
+atlas = ExtResource("1_00mg6")
+region = Rect2(417, 0, 139, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rco11"]
+atlas = ExtResource("1_00mg6")
+region = Rect2(556, 0, 139, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tmjl"]
+resource_local_to_scene = true
+resource_name = "Run"
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_wruwk")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_k8xwg")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_rco11")
+}],
+"loop": 0,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1242657494]
+
+[node name="Player 1" type="CharacterBody2D" parent="." unique_id=1547836392]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player 1" unique_id=718402417]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-1154.75, -1686.091)
+scale = Vector2(52.31295, 27.382576)
+sprite_frames = SubResource("SpriteFrames_2tmjl")
+animation = &"Run"
+script = ExtResource("2_wruwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 1" unique_id=1810690529]
+
+[node name="StickmanRunPart3" type="Sprite2D" parent="Player 1" unique_id=513953506]
+position = Vector2(205.5, 287)
+scale = Vector2(0.36666667, 0.72727275)
+texture = ExtResource("2_bu7lx")
+
+[node name="StickmanFasterWalkPart2" type="Sprite2D" parent="Player 1" unique_id=5363842]
+position = Vector2(-9744.006, 6201.38)
+scale = Vector2(0.7541667, -0.32902727)
+texture = ExtResource("4_wruwk")
